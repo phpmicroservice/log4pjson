@@ -36,7 +36,15 @@ class LoggerLayoutJson extends \LoggerLayout
             'timeStamp' => $event->getTimeStamp(),
         ];
         if ($this->locationInfo) {
-            $info['locationInfo'] = $event->getLocationInformation();
+            $li = $event->getLocationInformation();
+            $info['locationInfo'] =[
+                'lineNumber'=>$li->getLineNumber(),
+                'fileName'=>$li->getFileName(),
+                'className'=>$li->getClassName(),
+                'methodName'=>$li->getMethodName(),
+                'fullInfo'=>$li->getFullInfo()
+            ];
+
         }
         return json_encode($info) . PHP_EOL;
     }
