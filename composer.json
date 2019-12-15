@@ -1,0 +1,24 @@
+{
+  "name": "phpmicroservice/log4pjson",
+  "type": "library",
+  "keywords": [
+    "log4php",
+    "elk"
+  ],
+  "description": "log4php的日志格式工具",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dongasai",
+      "email": "1514582970@qq.com"
+    }
+  ],
+  "require": {
+    "apache/log4php": "~2.3.0"
+  },
+  "autoload": {
+    "files": [
+      "src/LoggerLayoutJson.php"
+    ]
+  }
+}
